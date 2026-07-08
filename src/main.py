@@ -6,6 +6,7 @@ def main():
     garage = Garage()
 
     asx = Vehicle(
+        vehicle_id=1,
         brand="Mitsubishi",
         model="ASX",
         version="HPE",
@@ -17,6 +18,7 @@ def main():
     )
 
     peugeot_207 = Vehicle(
+        vehicle_id=2,
         brand="Peugeot",
         model="207",
         version="XR Hatchback",
@@ -30,6 +32,21 @@ def main():
     garage.add_vehicle(asx)
     garage.add_vehicle(peugeot_207)
 
+    found_vehicle = garage.find_vehicle(1)
+
+
+    if found_vehicle:
+        print("Veículo encontrado: \n")
+        print(found_vehicle)
+    else:
+        print("Veículo não encontrado.")
+
+    removed = garage.remove_vehicle(1)
+
+    print(f"Veículo removido: {removed} \n")
+
+    print("Veículos listados: \n")
+    
     garage.list_vehicles()
 
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 class Vehicle:
     def __init__(
             self,
+            vehicle_id,
             brand,
             model,
             version,
@@ -10,6 +11,8 @@ class Vehicle:
             fuel_type,
             mileage,
     ):
+        
+        self.vehicle_id = vehicle_id
         self.brand = brand
         self.model = model
         self.version = version
@@ -21,6 +24,7 @@ class Vehicle:
     
     def __str__(self):
         return (
+            f"ID: {self.vehicle_id}\n"
             f"{self.brand} {self.model} {self.version} {self.year}\n"
             f"Motor: {self.engine}\n"
             f"Transmissão: {self.transmission}\n"
