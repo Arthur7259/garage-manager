@@ -30,3 +30,14 @@ class Garage:
             return True
 
         return False
+    
+    def update_vehicle(self, vehicle_id, **updates):
+        vehicle = self.find_vehicle(vehicle_id)
+
+        if vehicle:
+            for attribute, value in updates.items():
+                if hasattr(vehicle, attribute):
+                    setattr(vehicle, attribute, value)
+            return True
+        
+        return False
