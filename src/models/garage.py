@@ -38,6 +38,9 @@ class Garage:
             for attribute, value in updates.items():
                 if hasattr(vehicle, attribute):
                     setattr(vehicle, attribute, value)
+                else:
+                    print(f"Atributo inválido: {attribute}")
+                    
             return True
         
         return False
