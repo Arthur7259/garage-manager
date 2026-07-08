@@ -1,14 +1,21 @@
 from models.vehicle import Vehicle
 
 class Garage:
-    def __init__(self):
-        self.vehicles = []
+    def __init__(self, vehicles=None, storage=None):
+        self.storage = storage
+        
+        if vehicles is None:
+            self.vehicles = []
+        else:
+            self.vehicles = vehicles
 
     def add_vehicle(self, vehicle):
         if isinstance(vehicle, Vehicle):
             self.vehicles.append(vehicle)
         else:
             print("Objeto inváqlido. Aqpenas veículos podem ser adicionados.")
+        if self.storage:
+            self.storage.save(self.vehicles)
 
     def list_vehicles(self):
         for vehicle in self.vehicles:
@@ -27,8 +34,11 @@ class Garage:
 
         if vehicle:
             self.vehicles.remove(vehicle)
+        if self.storage:
+            self.storage.save(self.vehicles)
             return True
-
+        
+        
         return False
     
     def update_vehicle(self, vehicle_id, **updates):
@@ -40,7 +50,9 @@ class Garage:
                     setattr(vehicle, attribute, value)
                 else:
                     print(f"Atributo inválido: {attribute}")
-                    
+                if self.storage:
+                    self.storage.save(self.vehicles)
+
             return True
         
         return False

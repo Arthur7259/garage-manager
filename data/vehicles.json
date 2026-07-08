@@ -1,0 +1,24 @@
+[
+    {
+        "vehicle_id": 1,
+        "brand": "Peugeot",
+        "model": "207",
+        "version": "XR Hatchback",
+        "year": 2012,
+        "engine": "1.4L 8v I4",
+        "transmission": "MT5",
+        "fuel_type": "Flex",
+        "mileage": 114562
+    },
+    {
+        "vehicle_id": 2,
+        "brand": "Mitsubishi",
+        "model": "ASX",
+        "version": "HPE",
+        "year": "2019",
+        "engine": "2.0L 16v I4",
+        "transmission": "AT CVT",
+        "fuel_type": "Flex",
+        "mileage": 98780
+    }
+]

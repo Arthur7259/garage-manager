@@ -31,3 +31,30 @@ class Vehicle:
             f"Combustível: {self.fuel_type}\n"
             f"Quilometragem: {self.mileage} km\n"
         ) 
+    
+    def to_dict(self):
+        return {
+            "vehicle_id": self.vehicle_id,
+            "brand": self.brand,
+            "model": self.model,
+            "version": self.version,
+            "year": self.year,
+            "engine": self.engine,
+            "transmission": self.transmission,
+            "fuel_type": self.fuel_type,
+            "mileage": self.mileage,
+        }
+    
+    @classmethod
+    def from_dict(cls, data):
+        return cls(
+            vehicle_id=data["vehicle_id"],
+            brand=data["brand"],
+            model=data["model"],
+            version=data["version"],
+            year=data["year"],
+            engine=data["engine"],
+            transmission=data["transmission"],
+            fuel_type=data["fuel_type"],
+            mileage=data["mileage"]
+        )
