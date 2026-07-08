@@ -53,6 +53,92 @@ class CLI:
                 return vehicle
             return None
         
+    def update_vehicle(self):
+        print("=" * MENU_WIDTH)
+        print("Atualizar veículo")
+        print("=" * MENU_WIDTH)
+
+        vehicle_id = int(input("ID do veículo: "))
+
+        vehicle = self.garage.find_vehicle(vehicle_id)
+
+        if not vehicle:
+            print("=" * MENU_WIDTH)
+            print("Veículo não encontrado.")
+            print("=" * MENU_WIDTH)
+            return
+        print("=" * MENU_WIDTH)
+        print("Veículo encontrado!")
+        print("=" * MENU_WIDTH)
+        print(vehicle)
+
+        print("\nO que deseja atualizar?")
+        print("1 - Marca")
+        print("2 - Modelo")
+        print("3 - Versão")
+        print("4 - Ano")
+        print("5 - Motor")
+        print("6 - Transmissão")
+        print("7 - Combustível")
+        print("8 - Quilometragem")
+        print("0 - Cancelar")
+
+        option = input("\nEscolha uma opção: ")
+
+        if option == "1":
+            new_value = input("Noca marca: ")
+            self.garage.update_vehicle(vehicle_id, brand=new_value)
+        
+        elif option == "2":
+            new_value = input("Novo modelo: ")
+            self.garage.update_vehicle(vehicle_id, model=new_value)
+        
+        elif option == "3":
+            new_value = input("Nova versão: ")
+            self.garage.update_vehicle(vehicle_id, version=new_value)
+        
+        elif option == "4":
+            new_value = int(input("Ano atualizado: "))
+            self.garage.update_vehicle(vehicle_id, year=new_value)
+        
+        elif option == "5":
+            new_value = input("Novo motor: ")
+            self.garage.update_vehicle(vehicle_id, engine=new_value)
+        
+        elif option == "6":
+            new_value = input("Nova transmissão: ")
+            self.garage.update_vehicle(vehicle_id, transmission=new_value)
+        
+        elif option == "7":
+            new_value = input("Novo combustível: ")
+            self.garage.update_vehicle(vehicle_id, fuel_type=new_value)
+        
+        elif option == "8":
+            new_value = int(input("Quilometragem atualizada: "))
+            self.garage.update_vehicle(vehicle_id, mileage=new_value)
+        
+        elif option == "0":
+            print("Atualização cancelada.")
+            return
+        
+        else:
+            print("Opção inválida.")
+            return
+        
+        print("=" * MENU_WIDTH)
+        print("Dados atualizados!")
+        print("=" * MENU_WIDTH)
+        print(vehicle)
+    
+    def remove_vehicle(self, vehicle_id):
+        vehicle = self.find_vehicle(vehicle_id)
+
+        if vehicle:
+            self.garage.vehicles.remove(vehicle)
+            print(f"Veículo {vehicle_id} removido com sucesso!")
+        else:
+            print("Veículo não encontrado.")
+        
 
     def run(self):
         while True:
@@ -79,7 +165,15 @@ class CLI:
                     print(vehicle)
                 else:
                     print("Veículo não encontrado.")
+            
+            elif option == "4":
+                print("Atualizar veículo")
+                self.update_vehicle()
 
+            elif option == "5":
+                print("Remover veículo")
+                vehicle_id = int(input("Digite o ID do veículo a ser removido: "))
+                self.remove_vehicle(vehicle_id)
 
             elif option == "0":
                 print("Encerrando Garage Manager...")
