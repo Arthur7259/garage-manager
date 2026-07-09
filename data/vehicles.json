@@ -5,7 +5,7 @@
         "model": "207",
         "version": "XR Hatchback",
         "year": 2012,
-        "engine": "1.4L 8v I4",
+        "engine": "1.4L 8v TU3JP",
         "transmission": "MT5",
         "fuel_type": "Flex",
         "mileage": 114562
@@ -16,7 +16,7 @@
         "model": "ASX",
         "version": "HPE",
         "year": "2019",
-        "engine": "2.0L 16v I4",
+        "engine": "2.0L 16v MIVEC",
         "transmission": "AT CVT",
         "fuel_type": "Flex",
         "mileage": 98780
@@ -27,7 +27,7 @@
         "model": "Onix",
         "version": "LT",
         "year": "2016",
-        "engine": "1.0L 8v I4",
+        "engine": "1.0L 8v SPE/4",
         "transmission": "MT5",
         "fuel_type": "Flex",
         "mileage": 112554
@@ -38,9 +38,9 @@
         "model": "Civic",
         "version": "SI",
         "year": "2008",
-        "engine": "2.0L Vtec 16v I4",
+        "engine": "2.0L 16v K20Z3 i-VTEC",
         "transmission": "MT6",
-        "fuel_type": "Flex",
+        "fuel_type": "Gasolina",
         "mileage": 88765
     },
     {
@@ -69,10 +69,10 @@
         "vehicle_id": 7,
         "brand": "BMW",
         "model": "320i",
-        "version": "xDrive40",
+        "version": "Sport GP",
         "year": 2020,
         "engine": "2.0L Turbo I4",
-        "transmission": "AT",
+        "transmission": "AT8",
         "fuel_type": "Flex",
         "mileage": 20998
     },
@@ -82,7 +82,7 @@
         "model": "206",
         "version": "RC",
         "year": 2006,
-        "engine": "2.0L 16v I4",
+        "engine": "2.0L 16v EW10J4S",
         "transmission": "MT5",
         "fuel_type": "Gasolina",
         "mileage": 76234
@@ -92,8 +92,8 @@
         "brand": "Renault",
         "model": "Clio",
         "version": "RS",
-        "year": 2003,
-        "engine": "2.0",
+        "year": 2013,
+        "engine": "2.0L 16v F4R",
         "transmission": "MT5",
         "fuel_type": "Gasolina",
         "mileage": 55643
@@ -141,5 +141,82 @@
         "transmission": "AT6",
         "fuel_type": "Flex",
         "mileage": 19800
+    },
+    {
+        "vehicle_id": 14,
+        "brand": "Jeep",
+        "model": "Renegade",
+        "version": "longitude T270",
+        "year": 2023,
+        "engine": "1.3L Turbo 16v I4",
+        "transmission": "AT6",
+        "fuel_type": "Flex",
+        "mileage": 12400
+    },
+    {
+        "vehicle_id": 15,
+        "brand": "Honda",
+        "model": "Civic",
+        "version": "Touring",
+        "year": 2019,
+        "engine": "1.5L Turbo 16v I4",
+        "transmission": "AT CVT",
+        "fuel_type": "Gasolina",
+        "mileage": 51000
+    },
+    {
+        "vehicle_id": 16,
+        "brand": "Fiat",
+        "model": "Strada",
+        "version": "Volcano CD",
+        "year": 2020,
+        "engine": "1.3L Firefly",
+        "transmission": "MT5",
+        "fuel_type": "Flex",
+        "mileage": 45000
+    },
+    {
+        "vehicle_id": 17,
+        "brand": "Hyundai",
+        "model": "HB20",
+        "version": "Sense",
+        "year": 2024,
+        "engine": "1.oL Kappa 12v",
+        "transmission": "MT5",
+        "fuel_type": "Flex",
+        "mileage": 5600
+    },
+    {
+        "vehicle_id": 18,
+        "brand": "BYD",
+        "model": "Dolphin",
+        "version": "EV Plus",
+        "year": 2024,
+        "engine": "Elétrico Síncronos de íma Permanente",
+        "transmission": "AT1",
+        "fuel_type": "Elétrico",
+        "mileage": 8900
+    },
+    {
+        "vehicle_id": 19,
+        "brand": "Toyota",
+        "model": "Hilux",
+        "version": "SRX Cabine Dupla",
+        "year": 2017,
+        "engine": "2.8L Turbo Diesel 16v",
+        "transmission": "AT6",
+        "fuel_type": "Diesel",
+        "mileage": 11500
+    },
+    {
+        "vehicle_id": 20,
+        "brand": "Renault",
+        "model": "Kwid",
+        "version": "Zen",
+        "year": 2021,
+        "engine": "1.0L SCe 12v",
+        "transmission": "MT5",
+        "fuel_type": "Flex",
+        "mileage": 39100
     }
 ]

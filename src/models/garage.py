@@ -19,7 +19,7 @@ class Garage:
         if isinstance(vehicle, Vehicle):
             self.vehicles.append(vehicle)
         else:
-            print("Objeto inváqlido. Aqpenas veículos podem ser adicionados.")
+            print("Objeto inválido. Aqpenas veículos podem ser adicionados.")
         if self.storage:
             self.storage.save(self.vehicles)
 
