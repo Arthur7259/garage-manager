@@ -3,11 +3,17 @@ from models.vehicle import Vehicle
 class Garage:
     def __init__(self, vehicles=None, storage=None):
         self.storage = storage
-        
+
         if vehicles is None:
             self.vehicles = []
         else:
             self.vehicles = vehicles
+
+    def generate_id(self):
+        if not self.vehicles:
+            return 1
+
+        return max(vehicle.vehicle_id for vehicle in self.vehicles) + 1
 
     def add_vehicle(self, vehicle):
         if isinstance(vehicle, Vehicle):
@@ -27,18 +33,25 @@ class Garage:
             if vehicle.vehicle_id == vehicle_id:
                 return vehicle
             
-            return None
+        return None
         
     def remove_vehicle(self, vehicle_id):
-        vehicle = self.find_vehicle(vehicle_id)
+        print(f"Procurando para remover ID: {vehicle_id}")
 
-        if vehicle:
-            self.vehicles.remove(vehicle)
-        if self.storage:
-            self.storage.save(self.vehicles)
-            return True
-        
-        
+        for vehicle in self.vehicles:
+            print(f"Comparando com ID: {vehicle.vehicle_id}")
+
+            if vehicle.vehicle_id == vehicle_id:
+                print("Encontrei! Removendo...")
+
+                self.vehicles.remove(vehicle)
+
+                if self.storage:
+                    self.storage.save(self.vehicles)
+                
+                return True
+            
+        print("Não encontrei nenhum veículo")
         return False
     
     def update_vehicle(self, vehicle_id, **updates):

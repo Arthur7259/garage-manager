@@ -20,7 +20,7 @@ class CLI:
         print("0 - Sair")
 
     def create_vehicle(self):
-        vehicle_id = int(input("ID do veículo: "))
+        vehicle_id = self.garage.generate_id()
         brand = input("Marca: ")
         model = input("Modelo: ")
         version = input("Versão: ")
@@ -44,8 +44,7 @@ class CLI:
 
         self.garage.add_vehicle(vehicle)
     
-
-        print("Veículo cadastrado com sucesso!")
+        print(f"Veículo cadastrado com sucesso! ID: {vehicle_id}")
 
     def find_vehicle(self, vehicle_id):
         for vehicle in self.garage.vehicles:
@@ -130,11 +129,14 @@ class CLI:
         print("=" * MENU_WIDTH)
         print(vehicle)
     
-    def remove_vehicle(self, vehicle_id):
-        vehicle = self.find_vehicle(vehicle_id)
+    def remove_vehicle(self):
+        print("=" * MENU_WIDTH)
+        print("Remover veículo")
+        print("=" * MENU_WIDTH)
 
-        if vehicle:
-            self.garage.vehicles.remove(vehicle)
+        vehicle_id = int(input("ID do veículo: "))
+
+        if self.garage.remove_vehicle(vehicle_id):
             print(f"Veículo {vehicle_id} removido com sucesso!")
         else:
             print("Veículo não encontrado.")
@@ -172,8 +174,7 @@ class CLI:
 
             elif option == "5":
                 print("Remover veículo")
-                vehicle_id = int(input("Digite o ID do veículo a ser removido: "))
-                self.remove_vehicle(vehicle_id)
+                self.remove_vehicle()
 
             elif option == "0":
                 print("Encerrando Garage Manager...")

@@ -20,5 +20,38 @@
         "transmission": "AT CVT",
         "fuel_type": "Flex",
         "mileage": 98780
+    },
+    {
+        "vehicle_id": 3,
+        "brand": "Chevrolet",
+        "model": "Onix",
+        "version": "LT",
+        "year": "2016",
+        "engine": "1.0L 8v I4",
+        "transmission": "MT5",
+        "fuel_type": "Flex",
+        "mileage": 112554
+    },
+    {
+        "vehicle_id": 4,
+        "brand": "Honda",
+        "model": "Civic",
+        "version": "SI",
+        "year": "2008",
+        "engine": "2.0L Vtec 16v I4",
+        "transmission": "MT6",
+        "fuel_type": "Flex",
+        "mileage": 88765
+    },
+    {
+        "vehicle_id": 5,
+        "brand": "Volkswagen",
+        "model": "Fusca",
+        "version": "1600",
+        "year": "1973",
+        "engine": "1.6 F4",
+        "transmission": "MT4",
+        "fuel_type": "Alcool",
+        "mileage": 45665
     }
 ]
