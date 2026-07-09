@@ -36,13 +36,8 @@ class Garage:
         return None
         
     def remove_vehicle(self, vehicle_id):
-        print(f"Procurando para remover ID: {vehicle_id}")
-
         for vehicle in self.vehicles:
-            print(f"Comparando com ID: {vehicle.vehicle_id}")
-
             if vehicle.vehicle_id == vehicle_id:
-                print("Encontrei! Removendo...")
 
                 self.vehicles.remove(vehicle)
 
@@ -69,3 +64,34 @@ class Garage:
             return True
         
         return False
+
+    def search_by_brand(self, brand):
+        results = []
+
+        brand = brand.strip().lower()
+
+        for vehicle in self.vehicles:
+            if brand in vehicle.brand.lower():
+                results.append(vehicle)
+        
+        return results
+    
+    def search_by_model(self, model):
+        results = []
+
+        model = model.strip().lower()
+
+        for vehicle in self.vehicles:
+            if model.lower() in vehicle.model.lower():
+                results.append(vehicle)
+        
+        return results
+    
+    def search_by_fuel_type(self, fuel_type):
+        results = []
+
+        for vehicle in self.vehicles:
+            if vehicle.fuel_type.lower() == fuel_type.lower():
+                results.append(vehicle)
+
+        return results

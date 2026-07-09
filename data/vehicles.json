@@ -130,5 +130,16 @@
         "transmission": "AT CVT10",
         "fuel_type": "Flex",
         "mileage": 34200
+    },
+    {
+        "vehicle_id": 13,
+        "brand": "Chevrolet",
+        "model": "Onix Plus",
+        "version": "Premier Turbo",
+        "year": 2022,
+        "engine": "1.0L Turbo 12v",
+        "transmission": "AT6",
+        "fuel_type": "Flex",
+        "mileage": 19800
     }
 ]

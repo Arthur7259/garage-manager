@@ -16,6 +16,11 @@ def main():
         storage=storage
     )
 
+    resultados = garage.search_by_brand("Peugeot")
+
+    for vehicle in resultados:
+        print(vehicle)
+
     cli = CLI(garage)
     cli.run()
 

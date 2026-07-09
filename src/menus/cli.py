@@ -47,6 +47,100 @@ class CLI:
     
         print(f"Veículo cadastrado com sucesso! ID: {vehicle_id}")
 
+    def search_by_id(self):
+        vehicle_id = read_int("Digite o ID de veículo desejado: ")
+
+        vehicle = self.garage.find_vehicle(vehicle_id)
+
+        if vehicle:
+            print("=" * MENU_WIDTH)
+            print("Veículo encontrado")
+            print("=" * MENU_WIDTH)
+            print(vehicle)
+        else:
+            print("Veículo não encontrado")
+
+    def search_by_brand(self):
+        brand = read_non_empty("Digite a marca do veículo: ")
+
+        vehicles = self.garage.search_by_brand(brand)
+
+        if vehicles:
+            print("=" * MENU_WIDTH)
+            print("Veículos encontrados")
+            print("=" * MENU_WIDTH)
+
+            for vehicle in vehicles:
+                print(vehicle)
+                print("=" * MENU_WIDTH)
+        else:
+            print("Nenhum veículo encontrado.")
+
+    def search_by_model(self):
+        model = read_non_empty("Digite o modelo do veículo: ")
+
+        vehicles = self.garage.search_by_model(model)
+
+        if vehicles:
+            print("=" * MENU_WIDTH)
+            print("Veículos encontrados")
+            print("=" * MENU_WIDTH)
+
+            for vehicle in vehicles:
+                print(vehicle)
+                print("=" * MENU_WIDTH)
+        
+        else:
+            print("Nenhum veículo encontrado.")
+
+    def search_by_fuel_type(self):
+        fuel_type = read_non_empty("Digite o tipo de combustível do veículo: ")
+
+        vehicles = self.garage.search_by_fuel_type(fuel_type)
+
+        if vehicles:
+            print("=" * MENU_WIDTH)
+            print("Veículos encontrados")
+            print("=" * MENU_WIDTH)
+
+            for vehicle in vehicles:
+                print(vehicle)
+                print("=" * MENU_WIDTH)
+        
+        else:
+            print("Nenhum veículo encontrado.")
+
+
+    def search_menu(self):
+        while True:
+            print("=" * MENU_WIDTH)
+            print("Buscar veículo")
+            print("=" * MENU_WIDTH)
+
+            print("1 - Buscar por ID")
+            print("2 - Buscar por marca")
+            print("3 - Buscar por modelo")
+            print("4 - Buscar por tipo de combustível")
+            print("0 - Voltar")
+
+            option = input("\nEscolha uma opção de busca: ")
+
+            if option == "1":
+                self.search_by_id()
+            
+            elif option == "2":
+                self.search_by_brand()
+
+            elif option == "3":
+                self.search_by_model()
+            
+            elif option == "0":
+                break
+
+            else:
+                print("Opção inválida")
+
+
     def find_vehicle(self, vehicle_id):
         for vehicle in self.garage.vehicles:
             if vehicle.vehicle_id == vehicle_id:
@@ -158,16 +252,8 @@ class CLI:
                 self.garage.list_vehicles()
 
             elif option == "3":
-                print("Buscar veículo")
-                vehicle_id = int(input("Digite o ID do veículo desejado: "))
-                vehicle = self.find_vehicle(vehicle_id)
-                if vehicle:
-                    print("=" * MENU_WIDTH)
-                    print("Veículo encontrado")
-                    print("=" * MENU_WIDTH)
-                    print(vehicle)
-                else:
-                    print("Veículo não encontrado.")
+                self.search_menu()
+
             
             elif option == "4":
                 print("Atualizar veículo")
