@@ -1,5 +1,6 @@
 from models.vehicle import Vehicle
 from models.garage import Garage
+from utils.input_helper import (read_year, read_int, read_non_empty, read_positive_int)
 
 MENU_WIDTH = 25
 
@@ -21,14 +22,14 @@ class CLI:
 
     def create_vehicle(self):
         vehicle_id = self.garage.generate_id()
-        brand = input("Marca: ")
-        model = input("Modelo: ")
-        version = input("Versão: ")
-        year = input("Ano: ")
-        engine = input("Motor: ")
-        transmission = input("Transmissão: ")
-        fuel_type = input("Combustível: ")
-        mileage = int(input("Quilometragem: "))
+        brand = read_non_empty("Marca: ")
+        model = read_non_empty("Modelo: ")
+        version = read_non_empty("Versão: ")
+        year = read_year("Ano: ")
+        engine = read_non_empty("Motor: ")
+        transmission = read_non_empty("Transmissão: ")
+        fuel_type = read_non_empty("Combustível: ")
+        mileage = read_positive_int("Quilometragem ")
 
         vehicle = Vehicle(
             vehicle_id,
@@ -57,7 +58,7 @@ class CLI:
         print("Atualizar veículo")
         print("=" * MENU_WIDTH)
 
-        vehicle_id = int(input("ID do veículo: "))
+        vehicle_id = read_positive_int("ID do veículo: ")
 
         vehicle = self.garage.find_vehicle(vehicle_id)
 
@@ -97,7 +98,7 @@ class CLI:
             self.garage.update_vehicle(vehicle_id, version=new_value)
         
         elif option == "4":
-            new_value = int(input("Ano atualizado: "))
+            new_value = read_year("Ano atualizado: ")
             self.garage.update_vehicle(vehicle_id, year=new_value)
         
         elif option == "5":
@@ -113,7 +114,7 @@ class CLI:
             self.garage.update_vehicle(vehicle_id, fuel_type=new_value)
         
         elif option == "8":
-            new_value = int(input("Quilometragem atualizada: "))
+            new_value = read_positive_int("Quilometragem atualizada: ")
             self.garage.update_vehicle(vehicle_id, mileage=new_value)
         
         elif option == "0":

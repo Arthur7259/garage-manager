@@ -25,7 +25,7 @@ class Vehicle:
     def __str__(self):
         return (
             f"ID: {self.vehicle_id}\n"
-            f"{self.brand} {self.model} {self.version} {self.year}\n"
+            f"{self.brand} {self.model} {self.version} - {self.year}\n"
             f"Motor: {self.engine}\n"
             f"Transmissão: {self.transmission}\n"
             f"Combustível: {self.fuel_type}\n"

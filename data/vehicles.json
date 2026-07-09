@@ -53,5 +53,82 @@
         "transmission": "MT4",
         "fuel_type": "Alcool",
         "mileage": 45665
+    },
+    {
+        "vehicle_id": 6,
+        "brand": "Mercedes",
+        "model": "C63",
+        "version": "AMG",
+        "year": 2012,
+        "engine": "6.3L V8",
+        "transmission": "AT",
+        "fuel_type": "Gasolina",
+        "mileage": 47858
+    },
+    {
+        "vehicle_id": 7,
+        "brand": "BMW",
+        "model": "320i",
+        "version": "xDrive40",
+        "year": 2020,
+        "engine": "2.0L Turbo I4",
+        "transmission": "AT",
+        "fuel_type": "Flex",
+        "mileage": 20998
+    },
+    {
+        "vehicle_id": 8,
+        "brand": "Peugeot",
+        "model": "206",
+        "version": "RC",
+        "year": 2006,
+        "engine": "2.0L 16v I4",
+        "transmission": "MT5",
+        "fuel_type": "Gasolina",
+        "mileage": 76234
+    },
+    {
+        "vehicle_id": 9,
+        "brand": "Renault",
+        "model": "Clio",
+        "version": "RS",
+        "year": 2003,
+        "engine": "2.0",
+        "transmission": "MT5",
+        "fuel_type": "Gasolina",
+        "mileage": 55643
+    },
+    {
+        "vehicle_id": 10,
+        "brand": "Fiat",
+        "model": "Uno",
+        "version": "Mille",
+        "year": 2001,
+        "engine": "1.0L I4",
+        "transmission": "MT5",
+        "fuel_type": "Flex",
+        "mileage": 210455
+    },
+    {
+        "vehicle_id": 11,
+        "brand": "Volkswagen",
+        "model": "Gol",
+        "version": "MSI Trendline",
+        "year": 2018,
+        "engine": "1.6L 8v",
+        "transmission": "MT5",
+        "fuel_type": "Flex",
+        "mileage": 68500
+    },
+    {
+        "vehicle_id": 12,
+        "brand": "Toyota",
+        "model": "Corolla",
+        "version": "XEI",
+        "year": 2021,
+        "engine": "2.0 Dynamic Force",
+        "transmission": "AT CVT10",
+        "fuel_type": "Flex",
+        "mileage": 34200
     }
 ]
