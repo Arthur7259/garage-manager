@@ -18,6 +18,7 @@ class CLI:
         print("3 - Buscar veículo")
         print("4 - Atualizar veículo")
         print("5 - Remover veículo")
+        print("6 - Estatísticas")
         print("0 - Sair")
 
     def create_vehicle(self):
@@ -235,6 +236,28 @@ class CLI:
             print(f"Veículo {vehicle_id} removido com sucesso!")
         else:
             print("Veículo não encontrado.")
+    
+    def show_statistics(self):
+        stats = self.garage.get_statistics()
+        if stats is None:
+            print("Nenhum veículo cadastrado.")
+            return
+        
+        print(f"Total de veículos: {stats['total_vehicles']}")
+
+        print(f"Marcas cadastradas: {stats['total_brands']}")
+
+        print("Veículo mais antigo:")
+        print(stats["oldest_vehicle"].summary())
+
+        print("\nVeículo mais novo:")
+        print(stats["newest_vehicle"].summary())
+
+        print("\nMaior quilometragem:")
+        print(stats["highest_mileage"].summary())
+
+        print("\nMenor quilometragem:")
+        print(stats["lowest_mileage"].summary())
         
 
     def run(self):
@@ -262,6 +285,9 @@ class CLI:
             elif option == "5":
                 print("Remover veículo")
                 self.remove_vehicle()
+
+            elif option == "6":
+                self.show_statistics()
 
             elif option == "0":
                 print("Encerrando Garage Manager...")

@@ -32,6 +32,15 @@ class Vehicle:
             f"Quilometragem: {self.mileage} km\n"
         ) 
     
+    def summary(self):
+        mileage = f"{self.mileage:,}".replace(",", ".")
+        
+        return (
+            f"ID {self.vehicle_id} - "
+            f"{self.brand} {self.model} {self.version} - "
+            f"{self.year} ({self.mileage:} km)"
+        )
+    
     def to_dict(self):
         return {
             "vehicle_id": self.vehicle_id,
@@ -48,13 +57,13 @@ class Vehicle:
     @classmethod
     def from_dict(cls, data):
         return cls(
-            vehicle_id=data["vehicle_id"],
+            vehicle_id=int(data["vehicle_id"]),
             brand=data["brand"],
             model=data["model"],
             version=data["version"],
-            year=data["year"],
+            year=int(data["year"]),
             engine=data["engine"],
             transmission=data["transmission"],
             fuel_type=data["fuel_type"],
-            mileage=data["mileage"]
+            mileage=int(data["mileage"])
         )

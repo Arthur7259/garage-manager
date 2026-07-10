@@ -95,3 +95,44 @@ class Garage:
                 results.append(vehicle)
 
         return results
+    
+    def get_statistics(self):
+        if not self.vehicles:
+            return None
+        
+        brands = set(
+            vehicle.brand for vehicle in self.vehicles
+        )
+
+        total_brands = len(brands)
+        
+        total_vehicles = len(self.vehicles)
+
+        oldest_vehicle = min(
+        self.vehicles,
+        key=lambda vehicle: vehicle.year
+        )
+
+        newest_vehicle = max(
+            self.vehicles,
+            key=lambda vehicle: vehicle.year
+        )
+
+        highest_mileage = max(
+            self.vehicles,
+            key=lambda vehicle: vehicle.mileage
+        )
+
+        lowest_mileage = min(
+            self.vehicles,
+            key=lambda vehicle: vehicle.mileage
+        )
+
+        return {
+            "total_brands": total_brands,
+            "total_vehicles": total_vehicles,
+            "oldest_vehicle": oldest_vehicle,
+            "newest_vehicle": newest_vehicle,
+            "highest_mileage": highest_mileage,
+            "lowest_mileage": lowest_mileage
+            }
