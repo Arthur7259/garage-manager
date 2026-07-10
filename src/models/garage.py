@@ -128,11 +128,27 @@ class Garage:
             key=lambda vehicle: vehicle.mileage
         )
 
+        vehicles_by_brand = {}
+        for vehicle in self.vehicles:
+            if vehicle.brand in vehicles_by_brand:
+                vehicles_by_brand[vehicle.brand] += 1
+            else:
+                vehicles_by_brand[vehicle.brand] = 1
+
+        vehicles_by_fuel = {}
+        for vehicle in self.vehicles:
+            if vehicle.fuel_type in vehicles_by_fuel:
+                vehicles_by_fuel[vehicle.fuel_type] += 1
+            else:
+                vehicles_by_fuel[vehicle.fuel_type] = 1
+
         return {
             "total_brands": total_brands,
             "total_vehicles": total_vehicles,
             "oldest_vehicle": oldest_vehicle,
             "newest_vehicle": newest_vehicle,
             "highest_mileage": highest_mileage,
-            "lowest_mileage": lowest_mileage
+            "lowest_mileage": lowest_mileage,
+            "vehicles_by_brand": vehicles_by_brand,
+            "vehicles_by_fuel": vehicles_by_fuel
             }

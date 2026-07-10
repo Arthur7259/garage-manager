@@ -2,7 +2,7 @@ from models.vehicle import Vehicle
 from models.garage import Garage
 from utils.input_helper import (read_year, read_int, read_non_empty, read_positive_int)
 
-MENU_WIDTH = 25
+MENU_WIDTH = 50
 
 class CLI:
     def __init__(self, garage):
@@ -246,6 +246,22 @@ class CLI:
         print(f"Total de veículos: {stats['total_vehicles']}")
 
         print(f"Marcas cadastradas: {stats['total_brands']}")
+
+        print("=" * MENU_WIDTH)
+
+        print("Veículos por marca:")
+
+        for brand, quantity in stats["vehicles_by_brand"].items():
+            print(f"\n{brand}: {quantity}")
+
+        print("=" * MENU_WIDTH)
+
+        print("Veículos por combustível:")
+
+        for fuel_type, quantity in stats["vehicles_by_fuel"].items():
+            print(f"\n{fuel_type}: {quantity}")
+
+        print("=" * MENU_WIDTH)
 
         print("Veículo mais antigo:")
         print(stats["oldest_vehicle"].summary())
