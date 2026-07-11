@@ -52,7 +52,7 @@
         "engine": "1.6 F4",
         "transmission": "MT4",
         "fuel_type": "Alcool",
-        "mileage": 45665
+        "mileage": 55225
     },
     {
         "vehicle_id": 6,
@@ -64,17 +64,6 @@
         "transmission": "AT",
         "fuel_type": "Gasolina",
         "mileage": 47858
-    },
-    {
-        "vehicle_id": 7,
-        "brand": "BMW",
-        "model": "320i",
-        "version": "Sport GP",
-        "year": 2020,
-        "engine": "2.0L Turbo I4",
-        "transmission": "AT8",
-        "fuel_type": "Flex",
-        "mileage": 20998
     },
     {
         "vehicle_id": 8,
@@ -218,5 +207,16 @@
         "transmission": "MT5",
         "fuel_type": "Flex",
         "mileage": 39100
+    },
+    {
+        "vehicle_id": 21,
+        "brand": "Hyundai",
+        "model": "Creta",
+        "version": "Sense",
+        "year": 2025,
+        "engine": "1.6L Kappa Turbo",
+        "transmission": "AT6",
+        "fuel_type": "Flex",
+        "mileage": 23445
     }
 ]
